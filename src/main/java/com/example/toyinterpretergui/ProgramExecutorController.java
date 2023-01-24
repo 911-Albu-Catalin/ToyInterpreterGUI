@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import model.state.MyIBarrierTable;
 import model.state.ProgramState;
 import model.statement.IStatement;
 import model.state.MyIDictionary;
@@ -67,6 +68,18 @@ public class ProgramExecutorController {
     private ListView<String> executionStackListView;
 
     @FXML
+    private TableView<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>> barrierTableView;
+
+    @FXML
+    private TableColumn<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>, Integer> indexBarrierTableColumn;
+
+    @FXML
+    private TableColumn<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>, Integer> valueBarrierTableColumn;
+
+    @FXML
+    private TableColumn<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>, String> listBarrierTableColumn;
+
+    @FXML
     private Button runOneStepButton;
 
     public void setController(Controller controller) {
@@ -81,6 +94,9 @@ public class ProgramExecutorController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         variableNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         variableValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        indexBarrierTableColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getKey()).asObject());
+        valueBarrierTableColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getValue().getKey()).asObject());
+        listBarrierTableColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().getValue().toString()));
     }
 
     private ProgramState getCurrentProgramState() {
@@ -102,6 +118,7 @@ public class ProgramExecutorController {
         populateProgramStateIdentifiersListView();
         populateSymbolTableView();
         populateExecutionStackListView();
+        populateBarrierTableView();
     }
 
     @FXML
@@ -168,6 +185,18 @@ public class ProgramExecutorController {
             }
         executionStackListView.setItems(FXCollections.observableList(executionStackToString));
     }
+
+    private void populateBarrierTableView() {
+        ProgramState programState = getCurrentProgramState();
+        MyIBarrierTable barrierTable = Objects.requireNonNull(programState).getBarrierTable();
+        List<Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>>> barrierList = new ArrayList<>();
+        for (Map.Entry<Integer, javafx.util.Pair<Integer, List<Integer>>> entry: barrierTable.getBarrierTable().entrySet()) {
+            barrierList.add(entry);
+        }
+        barrierTableView.setItems(FXCollections.observableArrayList(barrierList));
+        barrierTableView.refresh();
+    }
+
 
     @FXML
     private void runOneStep(MouseEvent mouseEvent) {

@@ -26,7 +26,7 @@ public class Fork implements IStatement{
             newSymTable.put(entry.getKey(), entry.getValue().deepCopy());
         }
 
-        return new ProgramState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap());
+        return new ProgramState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap(), state.getBarrierTable());
     }
 
     @Override
