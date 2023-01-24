@@ -100,47 +100,6 @@ public class ProgramState {
         return currentStatement.execute(this);
     }
 
-    public String exeStackToString() {
-        StringBuilder exeStackStringBuilder = new StringBuilder();
-        List<IStatement> stack = exeStack.getReversed();
-        for (IStatement statement: stack) {
-            exeStackStringBuilder.append(statement.toString()).append("\n");
-        }
-        return exeStackStringBuilder.toString();
-    }
-
-    public String symTableToString() throws MyException {
-        StringBuilder symTableStringBuilder = new StringBuilder();
-        for (String key: symTable.keySet()) {
-            symTableStringBuilder.append(String.format("%s -> %s\n", key, symTable.lookUp(key).toString()));
-        }
-        return symTableStringBuilder.toString();
-    }
-
-    public String outToString() {
-        StringBuilder outStringBuilder = new StringBuilder();
-        for (IValue elem: out.getList()) {
-            outStringBuilder.append(String.format("%s\n", elem.toString()));
-        }
-        return outStringBuilder.toString();
-    }
-
-    public String heapToString() throws MyException {
-        StringBuilder heapStringBuilder = new StringBuilder();
-        for (Object key: heap.keySet()) {
-            heapStringBuilder.append(String.format("%d -> %s\n", key, heap.get((Integer) key)));
-        }
-        return heapStringBuilder.toString();
-    }
-
-    public String fileTableToString() {
-        StringBuilder fileTableStringBuilder = new StringBuilder();
-        for (String key: fileTable.keySet()) {
-            fileTableStringBuilder.append(String.format("%s\n", key));
-        }
-        return fileTableStringBuilder.toString();
-    }
-
     @Override
     public String toString() {
         String returnStr = "";
