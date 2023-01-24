@@ -1,6 +1,6 @@
-Id: 9
+Id: 1
 Execution Stack:
-[(int v ; (v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))))]
+[(Ref(int) v1 ; (int cnt ; (HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))))))]
 Symbol table:
 {}
 Output:
@@ -10,9 +10,9 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))), int v]
+[(int cnt ; (HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))))), Ref(int) v1]
 Symbol table:
 {}
 Output:
@@ -22,9 +22,9 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))), int v]
+[(int cnt ; (HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))))), Ref(int) v1]
 Symbol table:
 {}
 Output:
@@ -34,11 +34,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)))]
+[(int cnt ; (HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))))))]
 Symbol table:
-{v=0}
+{v1=(0, int)}
 Output:
 []
 File Table:
@@ -46,11 +46,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)))]
+[(int cnt ; (HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))))))]
 Symbol table:
-{v=0}
+{v1=(0, int)}
 Output:
 []
 File Table:
@@ -58,11 +58,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)), v=20]
+[(HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))))), int cnt]
 Symbol table:
-{v=0}
+{v1=(0, int)}
 Output:
 []
 File Table:
@@ -70,11 +70,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)), v=20]
+[(HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))))), int cnt]
 Symbol table:
-{v=0}
+{v1=(0, int)}
 Output:
 []
 File Table:
@@ -82,11 +82,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))]
+[(HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))))]
 Symbol table:
-{v=20}
+{cnt=0, v1=(0, int)}
 Output:
 []
 File Table:
@@ -94,11 +94,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))]
+[(HeapAllocation(v1, 2) ; (newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))))]
 Symbol table:
-{v=20}
+{cnt=0, v1=(0, int)}
 Output:
 []
 File Table:
@@ -106,11 +106,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))}]
+[(newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))), HeapAllocation(v1, 2)]
 Symbol table:
-{v=20}
+{cnt=0, v1=(0, int)}
 Output:
 []
 File Table:
@@ -118,11 +118,11 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))}]
+[(newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))), HeapAllocation(v1, 2)]
 Symbol table:
-{v=20}
+{cnt=0, v1=(0, int)}
 Output:
 []
 File Table:
@@ -130,651 +130,951 @@ File Table:
 Heap Table:
 {}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), (v=0 ; while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)})]
+[(newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))))]
 Symbol table:
-{v=20}
+{cnt=0, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), (v=0 ; while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)})]
+[(newSemaphore(cnt, ReadHeap(v1), 1) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))))]
 Symbol table:
-{v=20}
+{cnt=0, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=0]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))), newSemaphore(cnt, ReadHeap(v1), 1)]
 Symbol table:
-{v=20}
+{cnt=0, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=0]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))), newSemaphore(cnt, ReadHeap(v1), 1)]
 Symbol table:
-{v=20}
+{cnt=0, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))) ; (Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))), Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt)))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))), Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt)))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 2
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+[(acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+[(Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))) ; (acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 2
 Execution Stack:
-[(Print(v) ; v=v + 1)]
+[(acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+[(acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))), Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt))))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 2
 Execution Stack:
-[(Print(v) ; v=v + 1)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))), acquire(cnt)]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+[(acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt))), Fork((acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt))))))]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 2
 Execution Stack:
-[v=v + 1, Print(v)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt))), acquire(cnt)]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+[(acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 2
 Execution Stack:
-[v=v + 1, Print(v)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt)))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
 []
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 3
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+[(acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[]
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 1
 Execution Stack:
-[v=v + 1]
+[(acquire(cnt) ; (Print(ReadHeap(v1) - 1) ; release(cnt)))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[]
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 2
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (Print(ReadHeap(v1)) ; release(cnt)))]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[]
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 3
 Execution Stack:
-[v=v + 1]
+[(acquire(cnt) ; (HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))))]
 Symbol table:
-{v=0}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[]
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[]
 File Table:
 {}
 Heap Table:
-{}
+{1=2}
 
-Id: 10
+Id: 2
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt)), HeapWriting(v1, ReadHeap(v1) * 10)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=2}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=2}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=2}
+
+Id: 2
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt)), HeapWriting(v1, ReadHeap(v1) * 10)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=2}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=2}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
+Execution Stack:
+[release(cnt), Print(ReadHeap(v1))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
+Execution Stack:
+[release(cnt), Print(ReadHeap(v1))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
+Execution Stack:
+[release(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
+Execution Stack:
+[release(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 2
 Execution Stack:
 []
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 3
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+[(Print(ReadHeap(v1) - 1) ; release(cnt)), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[(Print(v) ; v=v + 1)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+[(Print(ReadHeap(v1) - 1) ; release(cnt))]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[(Print(v) ; v=v + 1)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+[(Print(ReadHeap(v1) - 1) ; release(cnt))]
 Symbol table:
-{v=2}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[v=v + 1, Print(v)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+[release(cnt), Print(ReadHeap(v1) - 1)]
 Symbol table:
-{v=2}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[v=v + 1, Print(v)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+[release(cnt), Print(ReadHeap(v1) - 1)]
 Symbol table:
-{v=2}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[v=v + 1]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1]
+[20]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+[release(cnt)]
 Symbol table:
-{v=2}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1]
+[20, 19]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[v=v + 1]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=1}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1]
+[20, 19]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
+Id: 1
 Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+[release(cnt)]
 Symbol table:
-{v=2}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1]
+[20, 19]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 11
+Id: 3
 Execution Stack:
-[]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))), acquire(cnt)]
 Symbol table:
-{v=2}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1]
+[20, 19]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 9
-Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
-Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 12
-Execution Stack:
-[(Print(v) ; v=v + 1)]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
-Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 12
-Execution Stack:
-[(Print(v) ; v=v + 1)]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
-Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
-Symbol table:
-{v=3}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 12
-Execution Stack:
-[v=v + 1, Print(v)]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
-Execution Stack:
-[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
-Symbol table:
-{v=3}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 12
-Execution Stack:
-[v=v + 1, Print(v)]
-Symbol table:
-{v=2}
-Output:
-[0, 1]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
-Execution Stack:
-[Print(v * 10)]
-Symbol table:
-{v=3}
-Output:
-[0, 1, 2]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 12
-Execution Stack:
-[v=v + 1]
-Symbol table:
-{v=2}
-Output:
-[0, 1, 2]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
-Execution Stack:
-[Print(v * 10)]
-Symbol table:
-{v=3}
-Output:
-[0, 1, 2]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 12
-Execution Stack:
-[v=v + 1]
-Symbol table:
-{v=2}
-Output:
-[0, 1, 2]
-File Table:
-{}
-Heap Table:
-{}
-
-Id: 9
+Id: 1
 Execution Stack:
 []
 Symbol table:
-{v=3}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1, 2, 30]
+[20, 19]
 File Table:
 {}
 Heap Table:
-{}
+{1=20}
 
-Id: 12
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt))))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; (HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt))))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt))), HeapWriting(v1, ReadHeap(v1) * 10)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt))), HeapWriting(v1, ReadHeap(v1) * 10)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=20}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=200}
+
+Id: 3
+Execution Stack:
+[(HeapWriting(v1, ReadHeap(v1) * 2) ; (Print(ReadHeap(v1)) ; release(cnt)))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=200}
+
+Id: 3
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt)), HeapWriting(v1, ReadHeap(v1) * 2)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=200}
+
+Id: 3
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt)), HeapWriting(v1, ReadHeap(v1) * 2)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=200}
+
+Id: 3
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=400}
+
+Id: 3
+Execution Stack:
+[(Print(ReadHeap(v1)) ; release(cnt))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=400}
+
+Id: 3
+Execution Stack:
+[release(cnt), Print(ReadHeap(v1))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=400}
+
+Id: 3
+Execution Stack:
+[release(cnt), Print(ReadHeap(v1))]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19]
+File Table:
+{}
+Heap Table:
+{1=400}
+
+Id: 3
+Execution Stack:
+[release(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19, 400]
+File Table:
+{}
+Heap Table:
+{1=400}
+
+Id: 3
+Execution Stack:
+[release(cnt)]
+Symbol table:
+{cnt=1, v1=(1, int)}
+Output:
+[20, 19, 400]
+File Table:
+{}
+Heap Table:
+{1=400}
+
+Id: 3
 Execution Stack:
 []
 Symbol table:
-{v=3}
+{cnt=1, v1=(1, int)}
 Output:
-[0, 1, 2, 30]
+[20, 19, 400]
 File Table:
 {}
 Heap Table:
-{}
+{1=400}
 

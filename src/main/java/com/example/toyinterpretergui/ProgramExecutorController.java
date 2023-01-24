@@ -3,15 +3,14 @@ package com.example.toyinterpretergui;
 import controller.Controller;
 import exceptions.MyException;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
-import model.state.ProgramState;
+import model.state.*;
 import model.statement.IStatement;
-import model.state.MyIDictionary;
-import model.state.MyIHeap;
 import model.value.IValue;
 
 import java.util.ArrayList;
@@ -67,6 +66,19 @@ public class ProgramExecutorController {
     private ListView<String> executionStackListView;
 
     @FXML
+    private TableView<Map.Entry<Integer, Tuple<Integer, List<Integer>, Integer>>> toySemaphoreTableView;
+
+    @FXML
+    private TableColumn<Map.Entry<Integer, Tuple<Integer, List<Integer>, Integer>>, Integer> indexToySemaphoreColumn;
+
+    @FXML
+    private TableColumn<Map.Entry<Integer, Tuple<Integer, List<Integer>, Integer>>, Integer> valueToySemaphoreColumn;
+
+    @FXML
+    private TableColumn<Map.Entry<Integer, Tuple<Integer, List<Integer>, Integer>>, List<Integer>> listToySemaphoreColumn;
+
+
+    @FXML
     private Button runOneStepButton;
 
     public void setController(Controller controller) {
@@ -81,6 +93,8 @@ public class ProgramExecutorController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         variableNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         variableValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        valueToySemaphoreColumn.setCellValueFactory(p -> new SimpleIntegerProperty(p.getValue().getValue().getFirst() - p.getValue().getValue().getThird()).asObject());
+        listToySemaphoreColumn.setCellValueFactory(p -> new SimpleObjectProperty<>(p.getValue().getValue().getSecond()));
     }
 
     private ProgramState getCurrentProgramState() {
@@ -102,6 +116,7 @@ public class ProgramExecutorController {
         populateProgramStateIdentifiersListView();
         populateSymbolTableView();
         populateExecutionStackListView();
+        populateToySemaphoreTableView();
     }
 
     @FXML
@@ -167,6 +182,17 @@ public class ProgramExecutorController {
                 executionStackToString.add(statement.toString());
             }
         executionStackListView.setItems(FXCollections.observableList(executionStackToString));
+    }
+
+    private void populateToySemaphoreTableView() {
+        ProgramState programState = getCurrentProgramState();
+        MyIToySemaphoreTable semaphoreTable = Objects.requireNonNull(programState).getToySemaphoreTable();
+        List<Map.Entry<Integer, Tuple<Integer, List<Integer>, Integer>>> toySemaphoreList = new ArrayList<>();
+        for (Map.Entry<Integer, Tuple<Integer, List<Integer>, Integer>> entry: semaphoreTable.getToySemaphoreTable().entrySet()) {
+            toySemaphoreList.add(entry);
+        }
+        toySemaphoreTableView.setItems(FXCollections.observableArrayList(toySemaphoreList));
+        toySemaphoreTableView.refresh();
     }
 
     @FXML

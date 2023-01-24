@@ -13,26 +13,30 @@ public class ProgramState {
     private MyIList<IValue> out;
     private MyIDictionary<String, BufferedReader> fileTable;
     private MyIHeap heap;
+
+    private MyIToySemaphoreTable toySemaphoreTable;
     private IStatement originalProgram;
     private int id;
     private static int lastId = 0;
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, IStatement program) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, MyIToySemaphoreTable toySemaphoreTable, IStatement program) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
         this.originalProgram = program.deepCopy();
+        this.toySemaphoreTable = toySemaphoreTable;
         this.exeStack.push(this.originalProgram);
         this.id = setId();
     }
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, MyIToySemaphoreTable toySemaphoreTable) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
+        this.toySemaphoreTable = toySemaphoreTable;
         this.heap = heap;
         this.id = setId();
     }
@@ -63,6 +67,10 @@ public class ProgramState {
         this.fileTable = newFileTable;
     }
 
+    public void setToySemaphoreTable(MyIToySemaphoreTable toySemaphoreTable) {
+        this.toySemaphoreTable = toySemaphoreTable;
+    }
+
 
     public int getId() {
         return this.id;
@@ -87,6 +95,9 @@ public class ProgramState {
 
     public MyIList<IValue> getOut() {
         return out;
+    }
+    public MyIToySemaphoreTable getToySemaphoreTable() {
+        return toySemaphoreTable;
     }
 
     public boolean isNotCompleted() {
