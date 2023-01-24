@@ -13,27 +13,30 @@ public class ProgramState {
     private MyIList<IValue> out;
     private MyIDictionary<String, BufferedReader> fileTable;
     private MyIHeap heap;
+    private MyILatchTable latchTable;
     private IStatement originalProgram;
     private int id;
     private static int lastId = 0;
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, IStatement program) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap,MyILatchTable latchTable, IStatement program) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.latchTable = latchTable;
         this.originalProgram = program.deepCopy();
         this.exeStack.push(this.originalProgram);
         this.id = setId();
     }
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap,MyILatchTable latchTable) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.latchTable = latchTable;
         this.id = setId();
     }
 
@@ -62,6 +65,9 @@ public class ProgramState {
     public void setFileTable(MyIDictionary<String, BufferedReader> newFileTable) {
         this.fileTable = newFileTable;
     }
+    public void setLatchTable(MyILatchTable newLatchTable) {
+        this.latchTable = newLatchTable;
+    }
 
 
     public int getId() {
@@ -89,6 +95,10 @@ public class ProgramState {
         return out;
     }
 
+    public MyILatchTable getLatchTable() {
+        return latchTable;
+    }
+
     public boolean isNotCompleted() {
         return exeStack.isEmpty();
     }
@@ -114,6 +124,9 @@ public class ProgramState {
         returnStr += fileTable.toString() + "\n";
         returnStr += "Heap Table:\n";
         returnStr += heap.toString();
+        returnStr += "\n";
+        returnStr += "Latch Table:\n";
+        returnStr += latchTable.toString();
         returnStr += "\n";
         return returnStr;
     }
