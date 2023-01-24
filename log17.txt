@@ -1,0 +1,408 @@
+Id: 14
+Execution Stack:
+[(bool b ; (int c ; (b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))))))]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(int c ; (b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))))), bool b]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(int c ; (b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))))), bool b]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(int c ; (b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c))))))]
+Symbol table:
+{b=false}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(int c ; (b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c))))))]
+Symbol table:
+{b=false}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c))))), int c]
+Symbol table:
+{b=false}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c))))), int c]
+Symbol table:
+{b=false}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))))]
+Symbol table:
+{b=false, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(b=true ; (c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))))]
+Symbol table:
+{b=false, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))), b=true]
+Symbol table:
+{b=false, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c)))), b=true]
+Symbol table:
+{b=false, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c))))]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(b)? 100: 200 ; (Print(c) ; (c=(false)? 100: 200 ; Print(c))))]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c))), c=(b)? 100: 200]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c))), c=(b)? 100: 200]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c))), if(b){c=100}else{c=200}]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c))), if(b){c=100}else{c=200}]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c))), c=100]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c))), c=100]
+Symbol table:
+{b=true, c=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c)))]
+Symbol table:
+{b=true, c=100}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(Print(c) ; (c=(false)? 100: 200 ; Print(c)))]
+Symbol table:
+{b=true, c=100}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(false)? 100: 200 ; Print(c)), Print(c)]
+Symbol table:
+{b=true, c=100}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(false)? 100: 200 ; Print(c)), Print(c)]
+Symbol table:
+{b=true, c=100}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(false)? 100: 200 ; Print(c))]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[(c=(false)? 100: 200 ; Print(c))]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c), c=(false)? 100: 200]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c), c=(false)? 100: 200]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c), if(false){c=100}else{c=200}]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c), if(false){c=100}else{c=200}]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c), c=200]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c), c=200]
+Symbol table:
+{b=true, c=100}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c)]
+Symbol table:
+{b=true, c=200}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[Print(c)]
+Symbol table:
+{b=true, c=200}
+Output:
+[100]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 14
+Execution Stack:
+[]
+Symbol table:
+{b=true, c=200}
+Output:
+[100, 200]
+File Table:
+{}
+Heap Table:
+{}
+

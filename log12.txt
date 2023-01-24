@@ -1,0 +1,780 @@
+Id: 9
+Execution Stack:
+[(int v ; (v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))))]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))), int v]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))), int v]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)))]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(v=20 ; (for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)))]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)), v=20]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10)), v=20]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[(for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))} ; Print(v * 10))]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))}]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), for(v=0; v<3; v=v + 1) {Fork((Print(v) ; v=v + 1))}]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), (v=0 ; while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)})]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), (v=0 ; while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)})]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=0]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=0]
+Symbol table:
+{v=20}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[(Print(v) ; v=v + 1)]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[(Print(v) ; v=v + 1)]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=1}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[v=v + 1, Print(v)]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=1}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[v=v + 1, Print(v)]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[v=v + 1]
+Symbol table:
+{v=0}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[v=v + 1]
+Symbol table:
+{v=0}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 10
+Execution Stack:
+[]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[(Print(v) ; v=v + 1)]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[(Print(v) ; v=v + 1)]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=2}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[v=v + 1, Print(v)]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=2}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[v=v + 1, Print(v)]
+Symbol table:
+{v=1}
+Output:
+[0]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[v=v + 1]
+Symbol table:
+{v=1}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, (Fork((Print(v) ; v=v + 1)) ; v=v + 1)]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[v=v + 1]
+Symbol table:
+{v=1}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 11
+Execution Stack:
+[]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1, Fork((Print(v) ; v=v + 1))]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[(Print(v) ; v=v + 1)]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}, v=v + 1]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[(Print(v) ; v=v + 1)]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=3}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[v=v + 1, Print(v)]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10), while(v < 3){(Fork((Print(v) ; v=v + 1)) ; v=v + 1)}]
+Symbol table:
+{v=3}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[v=v + 1, Print(v)]
+Symbol table:
+{v=2}
+Output:
+[0, 1]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10)]
+Symbol table:
+{v=3}
+Output:
+[0, 1, 2]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[v=v + 1]
+Symbol table:
+{v=2}
+Output:
+[0, 1, 2]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[Print(v * 10)]
+Symbol table:
+{v=3}
+Output:
+[0, 1, 2]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[v=v + 1]
+Symbol table:
+{v=2}
+Output:
+[0, 1, 2]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 9
+Execution Stack:
+[]
+Symbol table:
+{v=3}
+Output:
+[0, 1, 2, 30]
+File Table:
+{}
+Heap Table:
+{}
+
+Id: 12
+Execution Stack:
+[]
+Symbol table:
+{v=3}
+Output:
+[0, 1, 2, 30]
+File Table:
+{}
+Heap Table:
+{}
+
