@@ -1088,11 +1088,11 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 2
 Execution Stack:
-[(HeapWriting(v1, ReadHeap(v1) * 10) ; unlock(x))]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; unlock(x)), lock(x)]
 Symbol table:
 {q=0, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1102,7 +1102,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 3
 Execution Stack:
@@ -1116,7 +1116,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 4
 Execution Stack:
@@ -1130,7 +1130,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 5
 Execution Stack:
@@ -1144,7 +1144,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 1
 Execution Stack:
@@ -1158,11 +1158,11 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 2
 Execution Stack:
-[(HeapWriting(v1, ReadHeap(v1) * 10) ; unlock(x))]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; unlock(x)), lock(x)]
 Symbol table:
 {q=0, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1172,7 +1172,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 4
 Execution Stack:
@@ -1186,7 +1186,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 5
 Execution Stack:
@@ -1200,7 +1200,7 @@ File Table:
 Heap Table:
 {1=19, 2=30}
 Lock Table:
-{1=2, 2=-1}
+{1=-1, 2=-1}
 
 Id: 1
 Execution Stack:
@@ -1218,7 +1218,7 @@ Lock Table:
 
 Id: 2
 Execution Stack:
-[unlock(x), HeapWriting(v1, ReadHeap(v1) * 10)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; unlock(x))]
 Symbol table:
 {q=0, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1274,7 +1274,7 @@ Lock Table:
 
 Id: 2
 Execution Stack:
-[unlock(x), HeapWriting(v1, ReadHeap(v1) * 10)]
+[(HeapWriting(v1, ReadHeap(v1) * 10) ; unlock(x))]
 Symbol table:
 {q=0, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1324,13 +1324,13 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
 Id: 2
 Execution Stack:
-[unlock(x)]
+[unlock(x), HeapWriting(v1, ReadHeap(v1) * 10)]
 Symbol table:
 {q=0, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1338,7 +1338,7 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
@@ -1352,7 +1352,7 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
@@ -1366,7 +1366,7 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
@@ -1380,13 +1380,13 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
 Id: 2
 Execution Stack:
-[unlock(x)]
+[unlock(x), HeapWriting(v1, ReadHeap(v1) * 10)]
 Symbol table:
 {q=0, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1394,7 +1394,7 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
@@ -1408,7 +1408,7 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
@@ -1422,7 +1422,7 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=30}
+{1=19, 2=30}
 Lock Table:
 {1=2, 2=4}
 
@@ -1438,7 +1438,119 @@ File Table:
 Heap Table:
 {1=190, 2=300}
 Lock Table:
-{1=-1, 2=4}
+{1=2, 2=4}
+
+Id: 2
+Execution Stack:
+[unlock(x)]
+Symbol table:
+{q=0, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 4
+Execution Stack:
+[unlock(q)]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 5
+Execution Stack:
+[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q)), lock(q)]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 1
+Execution Stack:
+[(NOP ; (lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))))]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 2
+Execution Stack:
+[unlock(x)]
+Symbol table:
+{q=0, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 4
+Execution Stack:
+[unlock(q)]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 5
+Execution Stack:
+[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q)), lock(q)]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=2, 2=4}
+
+Id: 1
+Execution Stack:
+[(lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))), NOP]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=300}
+Lock Table:
+{1=-1, 2=5}
 
 Id: 2
 Execution Stack:
@@ -1452,11 +1564,11 @@ File Table:
 Heap Table:
 {1=190, 2=300}
 Lock Table:
-{1=-1, 2=4}
+{1=-1, 2=5}
 
 Id: 4
 Execution Stack:
-[unlock(q)]
+[]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1466,11 +1578,11 @@ File Table:
 Heap Table:
 {1=190, 2=300}
 Lock Table:
-{1=-1, 2=4}
+{1=-1, 2=5}
 
 Id: 5
 Execution Stack:
-[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q)), lock(q)]
+[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q))]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1480,123 +1592,11 @@ File Table:
 Heap Table:
 {1=190, 2=300}
 Lock Table:
-{1=-1, 2=4}
-
-Id: 1
-Execution Stack:
-[(NOP ; (lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))))]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=4}
-
-Id: 4
-Execution Stack:
-[unlock(q)]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=4}
-
-Id: 5
-Execution Stack:
-[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q)), lock(q)]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=4}
+{1=-1, 2=5}
 
 Id: 1
 Execution Stack:
 [(lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))), NOP]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=-1}
-
-Id: 4
-Execution Stack:
-[]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=-1}
-
-Id: 5
-Execution Stack:
-[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q)), lock(q)]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=-1}
-
-Id: 1
-Execution Stack:
-[(lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))), NOP]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=-1}
-
-Id: 5
-Execution Stack:
-[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q)), lock(q)]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=-1}
-
-Id: 1
-Execution Stack:
-[(lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q))))))]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1638,7 +1638,7 @@ Lock Table:
 
 Id: 5
 Execution Stack:
-[(HeapWriting(v2, ReadHeap(v2) + 5) ; unlock(q))]
+[unlock(q), HeapWriting(v2, ReadHeap(v2) + 5)]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1652,7 +1652,7 @@ Lock Table:
 
 Id: 1
 Execution Stack:
-[(Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q))))), lock(x)]
+[(lock(x) ; (Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q))))))]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1688,37 +1688,9 @@ Output:
 File Table:
 {}
 Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=5}
-
-Id: 5
-Execution Stack:
-[unlock(q), HeapWriting(v2, ReadHeap(v2) + 5)]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
-{1=190, 2=300}
-Lock Table:
-{1=-1, 2=5}
-
-Id: 1
-Execution Stack:
-[(Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))]
-Symbol table:
-{q=2, x=1, v1=(1, int), v2=(2, int)}
-Output:
-[]
-File Table:
-{}
-Heap Table:
 {1=190, 2=305}
 Lock Table:
-{1=1, 2=5}
+{1=-1, 2=5}
 
 Id: 5
 Execution Stack:
@@ -1732,11 +1704,11 @@ File Table:
 Heap Table:
 {1=190, 2=305}
 Lock Table:
-{1=1, 2=5}
+{1=-1, 2=5}
 
 Id: 1
 Execution Stack:
-[(Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))]
+[(Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q))))), lock(x)]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1746,7 +1718,7 @@ File Table:
 Heap Table:
 {1=190, 2=305}
 Lock Table:
-{1=1, 2=5}
+{1=-1, 2=5}
 
 Id: 5
 Execution Stack:
@@ -1760,11 +1732,11 @@ File Table:
 Heap Table:
 {1=190, 2=305}
 Lock Table:
-{1=1, 2=5}
+{1=-1, 2=5}
 
 Id: 1
 Execution Stack:
-[(unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))), Print(ReadHeap(v1))]
+[(Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:
@@ -1779,6 +1751,34 @@ Lock Table:
 Id: 5
 Execution Stack:
 []
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=305}
+Lock Table:
+{1=1, 2=-1}
+
+Id: 1
+Execution Stack:
+[(Print(ReadHeap(v1)) ; (unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))))]
+Symbol table:
+{q=2, x=1, v1=(1, int), v2=(2, int)}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=190, 2=305}
+Lock Table:
+{1=1, 2=-1}
+
+Id: 1
+Execution Stack:
+[(unlock(x) ; (lock(q) ; (Print(ReadHeap(v2)) ; unlock(q)))), Print(ReadHeap(v1))]
 Symbol table:
 {q=2, x=1, v1=(1, int), v2=(2, int)}
 Output:

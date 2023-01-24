@@ -8,6 +8,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import model.state.MyILockTable;
 import model.state.ProgramState;
 import model.statement.IStatement;
 import model.state.MyIDictionary;
@@ -65,7 +66,14 @@ public class ProgramExecutorController {
 
     @FXML
     private ListView<String> executionStackListView;
+    @FXML
+    private TableView<Pair<Integer, Integer>> lockTableView;
 
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> locationColumn;
+
+    @FXML
+    private TableColumn<Pair<Integer, Integer>, String> lockValueColumn;
     @FXML
     private Button runOneStepButton;
 
@@ -81,6 +89,8 @@ public class ProgramExecutorController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         variableNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         variableValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        locationColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first.toString()));
+        lockValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
     }
 
     private ProgramState getCurrentProgramState() {
@@ -102,6 +112,7 @@ public class ProgramExecutorController {
         populateProgramStateIdentifiersListView();
         populateSymbolTableView();
         populateExecutionStackListView();
+        populateLockTableView();
     }
 
     @FXML
@@ -167,6 +178,16 @@ public class ProgramExecutorController {
                 executionStackToString.add(statement.toString());
             }
         executionStackListView.setItems(FXCollections.observableList(executionStackToString));
+    }
+
+    private void populateLockTableView() {
+        ProgramState programState = getCurrentProgramState();
+        MyILockTable lockTable = Objects.requireNonNull(programState).getLockTable();
+        ArrayList<Pair<Integer, Integer>> lockTableEntries = new ArrayList<>();
+        for(Map.Entry<Integer, Integer> entry: lockTable.getContent().entrySet()) {
+            lockTableEntries.add(new Pair<>(entry.getKey(), entry.getValue()));
+        }
+        lockTableView.setItems(FXCollections.observableArrayList(lockTableEntries));
     }
 
     @FXML
