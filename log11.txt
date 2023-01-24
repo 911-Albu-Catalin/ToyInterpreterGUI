@@ -1,0 +1,574 @@
+Id: 1
+Execution Stack:
+[(int v ; (Ref(int) a ; (v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))))))]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Ref(int) a ; (v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))))), int v]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Ref(int) a ; (v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))))), int v]
+Symbol table:
+{}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Ref(int) a ; (v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))))))]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Ref(int) a ; (v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))))))]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))))), Ref(int) a]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))))), Ref(int) a]
+Symbol table:
+{v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))))]
+Symbol table:
+{a=(0, int), v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=10 ; (HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))))]
+Symbol table:
+{a=(0, int), v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))), v=10]
+Symbol table:
+{a=(0, int), v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))), v=10]
+Symbol table:
+{a=(0, int), v=0}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))))]
+Symbol table:
+{a=(0, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(HeapAllocation(a, 22) ; (Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))))]
+Symbol table:
+{a=(0, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))), HeapAllocation(a, 22)]
+Symbol table:
+{a=(0, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a)))), HeapAllocation(a, 22)]
+Symbol table:
+{a=(0, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))) ; (Print(v) ; Print(ReadHeap(a))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a))), Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a))))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a))), Fork((HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a))))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a)))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a)))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(HeapWriting(a, 30) ; (v=32 ; (Print(v) ; Print(ReadHeap(a)))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(ReadHeap(a)), Print(v)]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(v=32 ; (Print(v) ; Print(ReadHeap(a)))), HeapWriting(a, 30)]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(ReadHeap(a)), Print(v)]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(v=32 ; (Print(v) ; Print(ReadHeap(a)))), HeapWriting(a, 30)]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{1=22}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(ReadHeap(a))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(v=32 ; (Print(v) ; Print(ReadHeap(a))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(ReadHeap(a))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(v=32 ; (Print(v) ; Print(ReadHeap(a))))]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 1
+Execution Stack:
+[]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a))), v=32]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a))), v=32]
+Symbol table:
+{a=(1, int), v=10}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a)))]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[(Print(v) ; Print(ReadHeap(a)))]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[Print(ReadHeap(a)), Print(v)]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[Print(ReadHeap(a)), Print(v)]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[Print(ReadHeap(a))]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30, 32]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[Print(ReadHeap(a))]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30, 32]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+
+Id: 2
+Execution Stack:
+[]
+Symbol table:
+{a=(1, int), v=32}
+Output:
+[10, 30, 32, 30]
+File Table:
+{}
+Heap Table:
+{1=30}
+Lock Table:
+{}
+

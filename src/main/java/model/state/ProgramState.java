@@ -13,11 +13,13 @@ public class ProgramState {
     private MyIList<IValue> out;
     private MyIDictionary<String, BufferedReader> fileTable;
     private MyIHeap heap;
+
+    private MyILockTable lockTable;
     private IStatement originalProgram;
     private int id;
     private static int lastId = 0;
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, IStatement program) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap,  MyILockTable lockTable, IStatement program) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
@@ -26,15 +28,19 @@ public class ProgramState {
         this.originalProgram = program.deepCopy();
         this.exeStack.push(this.originalProgram);
         this.id = setId();
+        this.lockTable = lockTable;
+
     }
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap,  MyILockTable lockTable) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
         this.id = setId();
+        this.lockTable = lockTable;
+
     }
 
     public synchronized int setId() {
@@ -63,6 +69,9 @@ public class ProgramState {
         this.fileTable = newFileTable;
     }
 
+    public void setLockTable(MyILockTable newLockTable) {
+        this.lockTable = newLockTable;
+    }
 
     public int getId() {
         return this.id;
@@ -87,6 +96,10 @@ public class ProgramState {
 
     public MyIList<IValue> getOut() {
         return out;
+    }
+
+    public MyILockTable getLockTable() {
+        return lockTable;
     }
 
     public boolean isNotCompleted() {
@@ -155,6 +168,9 @@ public class ProgramState {
         returnStr += fileTable.toString() + "\n";
         returnStr += "Heap Table:\n";
         returnStr += heap.toString();
+        returnStr += "\n";
+        returnStr += "Lock Table:\n";
+        returnStr += lockTable.toString();
         returnStr += "\n";
         return returnStr;
     }
