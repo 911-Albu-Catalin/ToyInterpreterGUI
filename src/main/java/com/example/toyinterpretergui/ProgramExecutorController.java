@@ -3,21 +3,20 @@ package com.example.toyinterpretergui;
 import controller.Controller;
 import exceptions.MyException;
 import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import model.state.MyIProcedureTable;
 import model.state.ProgramState;
 import model.statement.IStatement;
 import model.state.MyIDictionary;
 import model.state.MyIHeap;
 import model.value.IValue;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Pair<T1, T2> {
@@ -58,6 +57,15 @@ public class ProgramExecutorController {
     private TableView<Pair<String, IValue>> symbolTableView;
 
     @FXML
+    private TableView<Map.Entry<String, javafx.util.Pair<List<String>, IStatement>>> procTableView;
+
+    @FXML
+    private TableColumn<Map.Entry<String, javafx.util.Pair<List<String>, IStatement>>, javafx.util.Pair<String, List<String>>> procNameTableColumn;
+
+    @FXML
+    private TableColumn<Map.Entry<String, javafx.util.Pair<List<String>, IStatement>>, String> procBodyTableColumn;
+
+    @FXML
     private TableColumn<Pair<String, IValue>, String> variableNameColumn;
 
     @FXML
@@ -81,6 +89,8 @@ public class ProgramExecutorController {
         valueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
         variableNameColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().first));
         variableValueColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().second.toString()));
+        procNameTableColumn.setCellValueFactory(p -> new SimpleObjectProperty<>(new javafx.util.Pair<String, List<String>>(p.getValue().getKey(), p.getValue().getValue().getKey())));
+        procBodyTableColumn.setCellValueFactory(p -> new SimpleStringProperty(p.getValue().getValue().getValue().toString()));
     }
 
     private ProgramState getCurrentProgramState() {
@@ -102,6 +112,7 @@ public class ProgramExecutorController {
         populateProgramStateIdentifiersListView();
         populateSymbolTableView();
         populateExecutionStackListView();
+        populateProcTableView();
     }
 
     @FXML
@@ -151,10 +162,12 @@ public class ProgramExecutorController {
 
     private void populateSymbolTableView() {
         ProgramState programState = getCurrentProgramState();
-        MyIDictionary<String, IValue> symbolTable = Objects.requireNonNull(programState).getSymTable();
+        MyIDictionary<String, IValue> symbolTable = Objects.requireNonNull(programState).getTopSymTable();
         ArrayList<Pair<String, IValue>> symbolTableEntries = new ArrayList<>();
-        for (Map.Entry<String, IValue> entry: symbolTable.getContent().entrySet()) {
-            symbolTableEntries.add(new Pair<>(entry.getKey(), entry.getValue()));
+        if (symbolTable != null) {
+            for (Map.Entry<String, IValue> entry: symbolTable.getContent().entrySet()) {
+                symbolTableEntries.add(new Pair<>(entry.getKey(), entry.getValue()));
+            }
         }
         symbolTableView.setItems(FXCollections.observableArrayList(symbolTableEntries));
     }
@@ -168,6 +181,18 @@ public class ProgramExecutorController {
             }
         executionStackListView.setItems(FXCollections.observableList(executionStackToString));
     }
+
+    private void populateProcTableView() {
+        MyIProcedureTable procTable = Objects.requireNonNull(getCurrentProgramState()).getProcTable();
+        List<Map.Entry<String, javafx.util.Pair<List<String>, IStatement>>> procTableList = new ArrayList<>();
+        for (Map.Entry<String, javafx.util.Pair<List<String>, IStatement>> entry: procTable.getContent().entrySet()) {
+            Map.Entry<String, javafx.util.Pair<List<String>, IStatement>> entry1 = new AbstractMap.SimpleEntry<>(entry.getKey(), entry.getValue());
+            procTableList.add(entry1);
+        }
+        procTableView.setItems(FXCollections.observableList(procTableList));
+        procTableView.refresh();
+    }
+
 
     @FXML
     private void runOneStep(MouseEvent mouseEvent) {

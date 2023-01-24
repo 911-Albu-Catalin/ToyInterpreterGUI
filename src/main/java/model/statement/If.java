@@ -24,7 +24,7 @@ public class If implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IValue result = this.expression.eval(state.getSymTable(), state.getHeap());
+        IValue result = this.expression.eval(state.getSymTable().peek(), state.getHeap());
         if (result.getType().equals(new BooleanType())) {
             BooleanValue castResult = (BooleanValue) result;
             IStatement statement;

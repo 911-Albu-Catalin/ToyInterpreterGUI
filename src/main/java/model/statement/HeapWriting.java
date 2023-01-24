@@ -23,7 +23,7 @@ public class HeapWriting implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        MyIDictionary<String, IValue> symTable = state.getSymTable();
+        MyIDictionary<String, IValue> symTable = state.getSymTable().peek();
         MyIHeap heap = state.getHeap();
         if (symTable.isDefined(varName)) {
             IValue value = symTable.lookUp(varName);

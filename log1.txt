@@ -1,0 +1,140 @@
+Id: 1
+Execution Stack:
+[(int v ; (v=2 ; Print(v)))]
+Symbol table:
+[{}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=2 ; Print(v)), int v]
+Symbol table:
+[{}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=2 ; Print(v)), int v]
+Symbol table:
+[{}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=2 ; Print(v))]
+Symbol table:
+[{v=0}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[(v=2 ; Print(v))]
+Symbol table:
+[{v=0}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(v), v=2]
+Symbol table:
+[{v=0}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(v), v=2]
+Symbol table:
+[{v=0}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(v)]
+Symbol table:
+[{v=2}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[Print(v)]
+Symbol table:
+[{v=2}]
+Output:
+[]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+
+Id: 1
+Execution Stack:
+[]
+Symbol table:
+[{v=2}]
+Output:
+[2]
+File Table:
+{}
+Heap Table:
+{}
+Proc table:
+{}
+

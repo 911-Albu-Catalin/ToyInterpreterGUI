@@ -1,6 +1,7 @@
 package model.statement;
 
 import exceptions.MyException;
+import model.state.MyIStack;
 import model.state.ProgramState;
 import model.type.IType;
 import model.state.MyIDictionary;
@@ -17,11 +18,12 @@ public class VariableDeclaration implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        MyIDictionary<String, IValue> symTable = state.getSymTable();
-        if (symTable.isDefined(name)) {
+        MyIStack<MyIDictionary<String, IValue>> symTable = state.getSymTable();
+        MyIDictionary<String, IValue> currentSymbolTable = symTable.peek();
+        if (currentSymbolTable.isDefined(name)) {
             throw new MyException("Variable " + name + " already exists in the symTable.");
         }
-        symTable.put(name, type.defaultValue());
+        currentSymbolTable.put(name, type.defaultValue());
         state.setSymTable(symTable);
         return null;
     }

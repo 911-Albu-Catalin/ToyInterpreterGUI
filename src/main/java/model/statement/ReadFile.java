@@ -25,7 +25,7 @@ public class ReadFile implements IStatement{
     }
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        MyIDictionary<String, IValue> symTable = state.getSymTable();
+        MyIDictionary<String, IValue> symTable = state.getSymTable().peek();
         MyIDictionary<String, BufferedReader> fileTable = state.getFileTable();
 
         if (symTable.isDefined(fileName)) {

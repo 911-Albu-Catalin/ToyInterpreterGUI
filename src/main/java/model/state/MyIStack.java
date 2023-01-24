@@ -10,4 +10,6 @@ public interface MyIStack<T> {
     T peek();
     boolean isEmpty();
     List<T> getReversed();
+    MyIStack<T> clone();
+
 }

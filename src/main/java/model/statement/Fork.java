@@ -21,12 +21,8 @@ public class Fork implements IStatement{
     public ProgramState execute(ProgramState state) throws MyException {
         MyIStack<IStatement> newStack = new MyStack<>();
         newStack.push(statement);
-        MyIDictionary<String, IValue> newSymTable = new MyDictionary<>();
-        for (Map.Entry<String, IValue> entry: state.getSymTable().getContent().entrySet()) {
-            newSymTable.put(entry.getKey(), entry.getValue().deepCopy());
-        }
-
-        return new ProgramState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap());
+        MyIStack<MyIDictionary<String, IValue>> newSymTable = state.getSymTable().clone();
+        return new ProgramState(newStack, newSymTable, state.getOut(), state.getFileTable(), state.getHeap(), state.getProcTable());
     }
 
     @Override

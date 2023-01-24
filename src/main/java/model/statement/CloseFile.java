@@ -23,7 +23,7 @@ public class CloseFile implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IValue value = expression.eval(state.getSymTable(), state.getHeap());
+        IValue value = expression.eval(state.getSymTable().peek(), state.getHeap());
         if (value.getType().equals(new StringType())) {
             StringValue fileName = (StringValue) value;
             MyIDictionary<String, BufferedReader> fileTable = state.getFileTable();

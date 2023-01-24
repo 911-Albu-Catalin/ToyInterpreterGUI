@@ -18,7 +18,7 @@ public class Print implements IStatement {
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
         MyIList<IValue> out = state.getOut();
-        out.add(expression.eval(state.getSymTable(), state.getHeap()));
+        out.add(expression.eval(state.getSymTable().peek(), state.getHeap()));
         state.setOut(out);
         return null;
     }

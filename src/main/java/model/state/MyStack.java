@@ -14,6 +14,10 @@ public class MyStack<T> implements MyIStack<T> {
         this.stack = new Stack<>();
     }
 
+    public MyStack(Stack<T> stack) {
+        this.stack = stack;
+    }
+
     @Override
     public T pop() throws MyException {
         if (stack.isEmpty())
@@ -46,5 +50,9 @@ public class MyStack<T> implements MyIStack<T> {
         List<T> list = Arrays.asList((T[]) stack.toArray());
         Collections.reverse(list);
         return list;
+    }
+    @Override
+    public MyIStack<T> clone() {
+        return new MyStack<T>((Stack<T>) stack.clone());
     }
 }

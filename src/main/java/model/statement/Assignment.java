@@ -5,6 +5,7 @@ import exceptions.InvalidOperandTypeException;
 import exceptions.MyException;
 import exceptions.TypeCheckException;
 import model.expression.IExpression;
+import model.state.MyIStack;
 import model.state.ProgramState;
 import model.type.IType;
 import model.state.MyIDictionary;
@@ -21,13 +22,13 @@ public class Assignment implements IStatement {
 
     @Override
     public ProgramState execute(ProgramState state) throws AssignmentException, MyException {
-        MyIDictionary<String, IValue> symbolTable = state.getSymTable();
-
-        if (symbolTable.isDefined(key)) {
-            IValue value = expression.eval(symbolTable, state.getHeap());
-            IType typeId = (symbolTable.lookUp(key)).getType();
+        MyIStack<MyIDictionary <String, IValue> > symbolTable = state.getSymTable();
+        MyIDictionary<String, IValue> currSymTable = symbolTable.peek();
+        if (currSymTable.isDefined(key)) {
+            IValue value = expression.eval(currSymTable, state.getHeap());
+            IType typeId = (currSymTable.lookUp(key)).getType();
             if (value.getType().equals(typeId)) {
-                symbolTable.update(key, value);
+                currSymTable.update(key, value);
             } else {
                 throw new AssignmentException("The type of the variable and the value do not match.");
             }

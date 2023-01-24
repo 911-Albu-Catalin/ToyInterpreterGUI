@@ -21,7 +21,7 @@ public class While implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        IValue value = expression.eval(state.getSymTable(), state.getHeap());
+        IValue value = expression.eval(state.getSymTable().peek(), state.getHeap());
         MyIStack<IStatement> stack = state.getExeStack();
         if (!value.getType().equals(new BooleanType()))
             throw new MyException(String.format("%s is not of BooleanType", value));

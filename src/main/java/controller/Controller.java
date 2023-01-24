@@ -116,7 +116,7 @@ public class Controller {
 
     public void conservativeGarbageCollector(List<ProgramState> programStates) {
         List<Integer> symTableAddr = Objects.requireNonNull(programStates.stream()
-                        .map(p -> getAddrFromSymTable(p.getSymTable().values()))
+                        .map(p -> getAddrFromSymTable(p.getTopSymTable().values()))
                         .map(Collection::stream)
                         .reduce(Stream::concat).orElse(null))
                 .collect(Collectors.toList());

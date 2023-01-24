@@ -4,6 +4,7 @@ import exceptions.InvalidOperandTypeException;
 import exceptions.MyException;
 import exceptions.TypeCheckException;
 import model.expression.IExpression;
+import model.state.MyIStack;
 import model.state.ProgramState;
 import model.type.RefType;
 import model.type.IType;
@@ -23,16 +24,17 @@ public class HeapAllocation implements IStatement{
 
     @Override
     public ProgramState execute(ProgramState state) throws MyException {
-        MyIDictionary<String, IValue> symTable = state.getSymTable();
+        MyIStack<MyIDictionary<String, IValue>> symTable = state.getSymTable();
+        MyIDictionary<String, IValue> currSymTable = symTable.peek();
         MyIHeap heap = state.getHeap();
-        if (symTable.isDefined(varName)) {
-            IValue varValue = symTable.lookUp(varName);
+        if (currSymTable.isDefined(varName)) {
+            IValue varValue = currSymTable.lookUp(varName);
             if ((varValue.getType() instanceof RefType)) {
-                IValue evaluated = expression.eval(symTable, heap);
+                IValue evaluated = expression.eval(currSymTable, heap);
                 IType locationType = ((RefValue) varValue).getLocationType();
                 if (locationType.equals(evaluated.getType())) {
                     int newPosition = heap.add(evaluated);
-                    symTable.put(varName, new RefValue(newPosition, locationType));
+                    currSymTable.put(varName, new RefValue(newPosition, locationType));
                     state.setSymTable(symTable);
                     state.setHeap(heap);
                 } else
