@@ -13,27 +13,30 @@ public class ProgramState {
     private MyIList<IValue> out;
     private MyIDictionary<String, BufferedReader> fileTable;
     private MyIHeap heap;
+    private MyISemaphoreTable semaphoreTable;
     private IStatement originalProgram;
     private int id;
     private static int lastId = 0;
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap, IStatement program) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap,  MyISemaphoreTable semaphoreTable, IStatement program) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.semaphoreTable = semaphoreTable;
         this.originalProgram = program.deepCopy();
         this.exeStack.push(this.originalProgram);
         this.id = setId();
     }
 
-    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap) {
+    public ProgramState(MyIStack<IStatement> stack, MyIDictionary<String, IValue> symTable, MyIList<IValue> out, MyIDictionary<String, BufferedReader> fileTable, MyIHeap heap,  MyISemaphoreTable semaphoreTable) {
         this.exeStack = stack;
         this.symTable = symTable;
         this.out = out;
         this.fileTable = fileTable;
         this.heap = heap;
+        this.semaphoreTable = semaphoreTable;
         this.id = setId();
     }
 
@@ -63,6 +66,10 @@ public class ProgramState {
         this.fileTable = newFileTable;
     }
 
+    public void setSemaphoreTable(MyISemaphoreTable newSemaphoreTable) {
+        this.semaphoreTable = newSemaphoreTable;
+    }
+
 
     public int getId() {
         return this.id;
@@ -87,6 +94,10 @@ public class ProgramState {
 
     public MyIList<IValue> getOut() {
         return out;
+    }
+
+    public MyISemaphoreTable getSemaphoreTable() {
+        return semaphoreTable;
     }
 
     public boolean isNotCompleted() {
